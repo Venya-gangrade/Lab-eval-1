@@ -1,0 +1,46 @@
+Q1
+s = input("Enter a sentence: ")
+
+words = s.split()
+
+backwards = []
+for word in words:
+    backwards.insert(0, word)
+
+capitalized = []
+for word in backwards:
+    capitalized.append(word.capitalize())
+
+print(' '.join(capitalized))
+
+
+
+Q2
+sentence = input("Enter a sentence: ")
+
+wordCount = {}
+letterCount = {}
+
+wordList = sentence.lower().split()
+
+for word in wordList:
+    if word in wordCount:
+        wordCount[word] += 1
+    else:
+        wordCount[word] = 1
+
+for char in sentence:
+    if char.isalpha():
+        char = char.lower()
+        if char in letterCount:
+            letterCount[char] += 1
+        else:
+            letterCount[char] = 1
+
+print("Word Occurrence")
+for word, count in wordCount.items():
+    print(word.capitalize() + " - " + str(count))
+
+print("\nLetter Occurrence")
+for letter, count in letterCount.items():
+    print(letter.upper() + " - " + str(count))
